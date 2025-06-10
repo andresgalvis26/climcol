@@ -1,0 +1,16 @@
+{
+    "name": "climcol-server",
+    "private": true,
+    "type": "module",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "build-client": "cd ../client && npm install && npm run build && cp -r dist ../server/public"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "node-fetch": "^3.3.1"
+    }
+}
