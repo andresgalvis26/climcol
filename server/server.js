@@ -29,19 +29,11 @@ app.get('/weather', async (req, res) => {
         return res.status(400).json({ error: 'Parámetro "city" es requerido.' });
     }
 
-    // const cached = cache.get(city);
-
-    // if (cached && Date.now() - cached.timestamp < 15 * 60 * 1000) { // 15 minutos
-    //     console.log('Datos de clima obtenidos desde caché para:', city);
-    //     return res.json(cached.data);
-    // }
-
     try {
         const response = await fetch(`${API_URL}/current.json?key=${API_KEY}&q=${encodeURIComponent(city)}&lang=es`);
 
         const data = await response.json();
         console.log('Weather data:', data);
-        cache.set(city, { data, timestamp: Date.now() });
         res.json(data);
     } catch (error) {
         console.error('Error fetching weather data:', error);

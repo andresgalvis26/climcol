@@ -46,7 +46,8 @@ const WeatherApp = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/weather?city=${encodeURIComponent(city)}`);
+      // const response = await fetch(`http://localhost:3000/weather?city=${encodeURIComponent(city)}`);
+      const response = await fetch(`/weather?city=${encodeURIComponent(city)}`);
       const data = await response.json();
 
 
