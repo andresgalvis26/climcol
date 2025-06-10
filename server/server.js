@@ -51,7 +51,6 @@ app.get('*', (req, res) => {
 
 // Iniciar el servidor
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
     console.log(`🌤️  Servidor ClimCol en puerto ${PORT}`)
     // console.log(`Serving static files from ${path.join(__dirname, '/client/dist')}`);
 })
