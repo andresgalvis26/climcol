@@ -24,9 +24,9 @@ const WeatherApp = () => {
     { name: 'Barranquilla', lat: 10.9639, lon: -74.7964 },
     { name: 'Cartagena', lat: 10.3910, lon: -75.4794 },
     { name: 'Bucaramanga', lat: 7.1253, lon: -73.1198 },
-    { name: 'Pereira', lat: 4.8133, lon: -75.6961 },
     { name: 'Santa Marta', lat: 11.2408, lon: -74.1990 },
-    { name: 'Cúcuta', lat: 7.8939, lon: -72.5078 }
+    { name: 'Cúcuta', lat: 7.8939, lon: -72.5078 },
+    { name: 'Tolu, Sucre', lat: 9.53, lon: -75.58 },
   ];
 
   const normalizeWeatherData = (data) => {
@@ -115,13 +115,48 @@ const WeatherApp = () => {
     </div>
   );
 
+  // return (
+  //   <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+  //     <Navigation
+  //       currentPage={currentPage}
+  //       setCurrentPage={setCurrentPage}
+  //     />
+  //     <div className="container mx-auto px-4 pb-8">
+  //       {currentPage === 'home' ? (
+  //         <HomePage
+  //           loading={loading}
+  //           error={error}
+  //           weatherData={weatherData}
+  //           searchCity={searchCity}
+  //           setSearchCity={setSearchCity}
+  //           fetchWeatherData={fetchWeatherData}
+  //           setSearchedWeather={setSearchedWeather}
+  //           searchedWeather={searchedWeather}
+  //           setError={setError}
+  //           WeatherCard={WeatherCard}
+  //           Title={Title}
+  //           SearchBar={SearchBar}
+  //         />
+  //       ) : (
+  //         <Dashboard
+  //           loading={loading}
+  //           error={error}
+  //           weatherData={weatherData}
+  //         />
+  //       )}
+  //     </div>
+  //     <Footer />
+  //   </div>
+  // );
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <Navigation
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-      <div className="container mx-auto px-4 pb-8">
+
+      {/* Contenido principal con flex-grow */}
+      <main className="flex-grow container mx-auto px-4 pb-8">
         {currentPage === 'home' ? (
           <HomePage
             loading={loading}
@@ -144,7 +179,8 @@ const WeatherApp = () => {
             weatherData={weatherData}
           />
         )}
-      </div>
+      </main>
+
       <Footer />
     </div>
   );
