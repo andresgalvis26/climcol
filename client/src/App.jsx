@@ -41,7 +41,11 @@ const WeatherApp = () => {
       pressure: data.current.pressure_mb,
       feelsLike: data.current.feelslike_c,
       uvIndex: data.current.uv,
-      lastUpdated: data.current.last_updated
+      lastUpdated: data.current.last_updated,
+      lat: data.location.lat,
+      lon: data.location.lon,
+      country: data.location.country,
+      icon: data.current.condition.icon, // Agrega el ícono del clima
     };
   }
 
@@ -115,39 +119,6 @@ const WeatherApp = () => {
     </div>
   );
 
-  // return (
-  //   <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-  //     <Navigation
-  //       currentPage={currentPage}
-  //       setCurrentPage={setCurrentPage}
-  //     />
-  //     <div className="container mx-auto px-4 pb-8">
-  //       {currentPage === 'home' ? (
-  //         <HomePage
-  //           loading={loading}
-  //           error={error}
-  //           weatherData={weatherData}
-  //           searchCity={searchCity}
-  //           setSearchCity={setSearchCity}
-  //           fetchWeatherData={fetchWeatherData}
-  //           setSearchedWeather={setSearchedWeather}
-  //           searchedWeather={searchedWeather}
-  //           setError={setError}
-  //           WeatherCard={WeatherCard}
-  //           Title={Title}
-  //           SearchBar={SearchBar}
-  //         />
-  //       ) : (
-  //         <Dashboard
-  //           loading={loading}
-  //           error={error}
-  //           weatherData={weatherData}
-  //         />
-  //       )}
-  //     </div>
-  //     <Footer />
-  //   </div>
-  // );
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <Navigation

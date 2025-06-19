@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cloud, Sun, CloudRain, Thermometer, Wind, Droplets, Eye, BarChart3, Home, TrendingUp, TrendingDown } from 'lucide-react';
+import { Cloud, Sun, CloudRain, Thermometer, Wind, Droplets, Eye, BarChart3, Home, TrendingUp, TrendingDown, CloudDrizzle, Cloudy } from 'lucide-react';
 
 const WeatherCard = ({ weather }) => {
 
@@ -7,13 +7,15 @@ const WeatherCard = ({ weather }) => {
         switch (condition.toLowerCase()) {
             case 'soleado':
                 return <Sun className="w-12 h-12 text-yellow-500" />;
-            case 'nublado':
-                return <Cloud className="w-12 h-12 text-gray-400" />;
+            case 'despejado':
+                return <Sun className="w-12 h-12 text-yellow-500" />;
+            case 'parcialmente nublado':
+                return <Cloudy className="w-12 h-12 text-gray-400" />;
             case 'lluvia ligera':
                 return <CloudRain className="w-12 h-12 text-blue-500" />;
             case 'ligeras lluvias':
-                return <CloudRain className="w-12 h-12 text-blue-500" />;
-            case 'lluvia':
+                return <CloudDrizzle className="w-12 h-12 text-blue-500" />
+            case 'lluvia  moderada a intervalos':
                 return <CloudRain className="w-12 h-12 text-blue-500" />;
             default:
                 return <Cloud className="w-12 h-12 text-gray-400" />;
@@ -27,7 +29,17 @@ const WeatherCard = ({ weather }) => {
                     {weather.city}, {weather.region}
                 </h3>
                 {getWeatherIcon(weather.condition)}
+                {/* {weather.icon} */}
             </div>
+
+            <div className="flex items-center justify-between mb-4">
+                <h5 className="text-xs font-bold text-gray-800 dark:text-white">
+                    {/* {weather.country} */}
+                    Lat: {weather.lat}, Long: {weather.lon}
+                </h5>
+            </div>
+
+
 
             <div className="mb-4">
                 <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
