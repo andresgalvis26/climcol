@@ -53,8 +53,11 @@ const Dashboard = ({ loading, error, weatherData }) => {
                 <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                     Dashboard del Clima
                 </h1>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-600 dark:text-gray-300 mb-2">
                     Estadísticas y análisis del clima en tiempo real
+                </p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    Actualizado por última vez: {weatherData.length > 0 ? weatherData[0].lastUpdated : 'Cargando...'}
                 </p>
             </div>
 
@@ -103,7 +106,7 @@ const Dashboard = ({ loading, error, weatherData }) => {
 
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 border border-gray-100 dark:border-gray-700">
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                            Resumen por Ciudad
+                            Resumen por Ciudad realizando la consulta
                         </h3>
                         <div className="overflow-x-auto">
                             <table className="w-full text-sm">

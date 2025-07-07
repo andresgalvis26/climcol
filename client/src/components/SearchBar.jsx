@@ -22,7 +22,7 @@ const SearchBar = ({ searchCity, setSearchCity, fetchWeatherData, setSearchedWea
                 value={searchCity}
                 onChange={(e) => setSearchCity(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                className="px-4 w-1/4 py-2 border rounded-md text-gray-700 dark:text-white dark:bg-gray-800 dark:border-gray-600 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="px-4 w-1/4 py-2 border rounded-md bg-white border-gray-100  text-gray-700 dark:text-white dark:bg-gray-800 dark:border-gray-600 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
             <button
                 onClick={handleSearch}
